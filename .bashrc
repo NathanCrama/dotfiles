@@ -26,4 +26,4 @@ alias gp="git push" # + remote & branch names
 
 # Use MacVim - for autocompletion
 alias vim='mvim -v'
-alias cr='cargo run'
+alias cr='clear && cargo run'
