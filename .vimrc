@@ -11,8 +11,6 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'rust-lang/rust.vim'
-" Plugin 'itchyny/lightline.vim'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'scrooloose/nerdtree'
 Plugin 'phildawes/racer'
 Plugin 'racer-rust/vim-racer'
