@@ -15,16 +15,18 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'phildawes/racer'
 Plugin 'racer-rust/vim-racer'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'majutsushi/tagbar'
 Plugin 'vim-scripts/indentpython.vim'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'jnurmine/Zenburn'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'w0rp/ale'
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-fugitive'
+
 
 
 " The following are examples of different formats supported.
