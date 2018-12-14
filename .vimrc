@@ -19,6 +19,7 @@ Plugin 'w0rp/ale'
 Plugin 'phildawes/racer'
 Plugin 'racer-rust/vim-racer'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'majutsushi/tagbar'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -80,7 +81,50 @@ filetype indent on
 set smartindent
 
 syntax on
+set showcmd
 
+" Leader = \
+" run and build shortcuts for Rust
+nmap <leader>r :! clear && cargo run<CR>
+nmap <leader>b :! clear && cargo build<CR>
+
+
+
+" Plugin shortcuts
+"
 nmap <F6> :NERDTreeToggle<CR>
+nmap <F8> :TagbarToggle<CR>
+    " NERDTree customization
+        " Start NERDTree
+autocmd VimEnter * NERDTree
+        " Go to previous (last accessed) window.
+autocmd VimEnter * wincmd p
+        " Focusses main window when opening a new tab
+autocmd BufNew * wincmd l
 
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+"function! NERDTreeQuit()
+"  redir => buffersoutput
+"  silent buffers
+"  redir END
+""                     1BufNo  2Mods.     3File           4LineNo
+"  let pattern = '^\s*\(\d\+\)\(.....\) "\(.*\)"\s\+line \(\d\+\)$'
+"  let windowfound = 0
+"
+"  for bline in split(buffersoutput, "\n")
+"    let m = matchlist(bline, pattern)
+"
+"    if (len(m) > 0)
+"      if (m[2] =~ '..a..')
+"        let windowfound = 1
+"      endif
+"    endif
+"  endfor
+"
+"  if (!windowfound)
+"    quitall
+"  endif
+"endfunction
+"
+"autocmd WinEnter * call NERDTreeQuit()
