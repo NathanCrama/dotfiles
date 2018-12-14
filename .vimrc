@@ -12,14 +12,23 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'rust-lang/rust.vim'
 Plugin 'junegunn/fzf.vim'
-Plugin 'itchyny/lightline.vim'
+" Plugin 'itchyny/lightline.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'scrooloose/nerdtree'
-Plugin 'w0rp/ale'
 Plugin 'phildawes/racer'
 Plugin 'racer-rust/vim-racer'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'majutsushi/tagbar'
+Plugin 'vim-scripts/indentpython.vim'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'jnurmine/Zenburn'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'w0rp/ale'
+Plugin 'jiangmiao/auto-pairs'
+
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -61,13 +70,13 @@ colorscheme darcula
 set number
 
 " Auto-closes brackets 
-inoremap " ""<left>
-inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+"inoremap " ""<left>
+"inoremap ' ''<left>
+"inoremap ( ()<left>
+"inoremap [ []<left>
+"inoremap { {}<left>
+"inoremap {<CR> {<CR>}<ESC>O
+"inoremap {;<CR> {<CR>};<ESC>O
 
 
 " Fixes tab length
@@ -79,11 +88,26 @@ set expandtab
 set autoindent
 filetype indent on
 set smartindent
+set hlsearch
 
+" syntax highlighting
 syntax on
-set showcmd
+
+" Changes cursor in insert mode
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
+let &t_SI = "\e[3 q"
+let &t_EI = "\e[1 q"
+
+" optional reset cursor on start:
+augroup myCmds
+au!
+autocmd VimEnter * silent !echo -ne "\e[1 q"
+augroup END
 
 " Leader = \
+    " shows that the leader key has been pressed 
+set showcmd
 " run and build shortcuts for Rust
 nmap <leader>r :! clear && cargo run<CR>
 nmap <leader>b :! clear && cargo build<CR>
@@ -104,27 +128,3 @@ autocmd BufNew * wincmd l
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-"function! NERDTreeQuit()
-"  redir => buffersoutput
-"  silent buffers
-"  redir END
-""                     1BufNo  2Mods.     3File           4LineNo
-"  let pattern = '^\s*\(\d\+\)\(.....\) "\(.*\)"\s\+line \(\d\+\)$'
-"  let windowfound = 0
-"
-"  for bline in split(buffersoutput, "\n")
-"    let m = matchlist(bline, pattern)
-"
-"    if (len(m) > 0)
-"      if (m[2] =~ '..a..')
-"        let windowfound = 1
-"      endif
-"    endif
-"  endfor
-"
-"  if (!windowfound)
-"    quitall
-"  endif
-"endfunction
-"
-"autocmd WinEnter * call NERDTreeQuit()
