@@ -16,6 +16,7 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'scrooloose/nerdtree'
 Plugin 'w0rp/ale'
+Plugin 'phildawes/racer'
 Plugin 'racer-rust/vim-racer'
 Plugin 'Valloric/YouCompleteMe'
 
