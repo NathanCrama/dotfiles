@@ -123,5 +123,6 @@ autocmd VimEnter * wincmd p
         " Focusses main window when opening a new tab
 autocmd BufNew * wincmd l
 
+" Changes cursor in insert/normal mode
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
