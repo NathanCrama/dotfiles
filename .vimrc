@@ -70,6 +70,8 @@ inoremap {;<CR> {<CR>};<ESC>O
 
 " Fixes tab length
 set tabstop=4
+set shiftwidth=4
+set expandtab
 
 " Set auto-indent
 set autoindent
