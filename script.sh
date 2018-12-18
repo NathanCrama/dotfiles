@@ -17,10 +17,8 @@ ln -s ~/dotfiles/.vim ~/.vim
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.bash_profile ~/.bash_profile
 ln -s ~/dotfiles/.vimrc ~/.vimrc
+source ~/.bashrc
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 sh ~/.vim/bundle/YouCompleteMe/install.sh | grep 0 | echo
 vim +PluginInstall +qall
-
-source .bashrc
-
