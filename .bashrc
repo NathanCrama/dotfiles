@@ -3,7 +3,7 @@ export PS1="\w $ \[$(tput sgr0)\]"
 alias ls='ls -AhlGF'
 alias rm='rm -v'
 
-alias iphone='open -a Simulator'
+alias iphone='open -a Simulator & disown' 
 alias pixel='~/Library/Android/sdk/tools/emulator -avd Pixel_2_XL_API_26 & disown'
 alias emulator='~/Library/Android/sdk/tools/emulator'
 
@@ -26,7 +26,8 @@ alias InstallPlugin='vim +PluginInstall +qall'
 
 
 alias cr='clear && cargo run'
-
+export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH="$HOME/.cargo/bin:$PATH"
 
 # HSTR configuration - add this to ~/.bashrc
 alias hh=hstr                    # hh to be alias for hstr
@@ -41,4 +42,5 @@ export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
 if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
 # if this is interactive shell, then bind 'kill last command' to Ctrl-x k
 if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
+
 
