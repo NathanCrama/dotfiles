@@ -17,6 +17,7 @@ ln -s ~/dotfiles/.vim ~/.vim
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.bash_profile ~/.bash_profile
 ln -s ~/dotfiles/.vimrc ~/.vimrc
+ln -s ~/dotfiles/darcula.vim ~/.vim/colors/darcula.vim 
 source ~/.bashrc
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
