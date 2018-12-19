@@ -12,8 +12,6 @@ echo "Deleting ~/.vimrc"
 rm ~/.vimrc
 echo "Deleting ~/.vim/"
 rm -rf ~/.vim
-echo "Deleting ~/dotfiles/"
-rm -rf ~/dotfiles
 
 ln -s ~/dotfiles/.vim ~/.vim
 ln -s ~/dotfiles/.bashrc ~/.bashrc

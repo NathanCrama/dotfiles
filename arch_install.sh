@@ -7,8 +7,6 @@ echo "Deleting ~/.vimrc"
 rm ~/.vimrc
 echo "Deleting ~/.vim/"
 rm -rf ~/.vim
-echo "Deleting ~/dotfiles/"
-rm -rf ~/dotfiles
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
