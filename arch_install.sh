@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo pacman -Syu
-sudo pacman base-devel git vim tree wget curl openssh network-manager wpa_supplicant wireless_tools yajl
+sudo pacman -Syu --noconfirm
+sudo pacman --noconfirm base-devel git vim tree wget curl openssh network-manager wpa_supplicant wireless_tools yajl
 
 curl -L https://raw.githubusercontent.com/NathanCrama/dotfiles/master/script.sh | sh && ~/.vim/bundle/YouCompleteMe/install.sh | grep 0
 
