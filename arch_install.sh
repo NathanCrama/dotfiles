@@ -25,12 +25,12 @@ echo "alias pm='sudo pacman -Sy --noconfirm'" >> ~/.bashrc
 
 git clone https://aur.archlinux.org/package-query.git ~/package-query
 cd ~/package-query 
-"y" | makepkg -si
+"y" | makepkg -si >> /dev/null
 cd ~
 
 git clone https://aur.archlinux.org/yaourt.git ~/yaourt
 cd ~/yaourt
-"y" | makepkg -si
+"y" | makepkg -si >> /dev/null
 cd ~
 
 rm -dvfR ~/yaourt ~/package-query
