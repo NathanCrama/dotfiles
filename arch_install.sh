@@ -3,7 +3,22 @@
 sudo pacman -Syu --noconfirm
 sudo pacman --noconfirm base-devel git vim tree wget curl openssh network-manager wpa_supplicant wireless_tools yajl
 
-curl -L https://raw.githubusercontent.com/NathanCrama/dotfiles/master/script.sh | sh && ~/.vim/bundle/YouCompleteMe/install.sh | grep 0
+echo "Deleting ~/.vimrc"
+rm ~/.vimrc
+echo "Deleting ~/.vim/"
+rm -rf ~/.vim
+echo "Deleting ~/dotfiles/"
+rm -rf ~/dotfiles
+
+ln -s ~/dotfiles/.vim ~/.vim
+cat ~/dotfiles/.bashrc > ~/.bashrc
+cat ~/dotfiles/.bash_profile > ~/.bash_profile
+cat ~/dotfiles/.vimrc > ~/.vimrc
+ln -s ~/dotfiles/darcula.vim ~/.vim/colors/darcula.vim 
+source ~/.bashrc
+
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+vim +PluginInstall +qall
 
 echo "alias pacman='sudo pacman'" >> ~/.bashrc
 echo "alias pm='sudo pacman -Sy --noconfirm'" >> ~/.bashrc

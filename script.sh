@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "Deleting ~/.bashrc"
+rm ~/.bashrc
 echo "Deleting ~/.bash_profile"
 rm ~/.bash_profile
 echo "Deleting ~/.vimrc"
