@@ -20,10 +20,12 @@ alias gs="git status"
 alias gac="git add . && git commit -m" # + commit message
 alias gp="git push" # + remote & branch names
 
-# Use MacVim - for autocompletion
-alias vim='mvim -v'
-alias InstallPlugin='vim +PluginInstall +qall'
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    # Use MacVim - for autocompletion
+    alias vim='mvim -v'
+fi
 
+alias InstallPlugin='vim +PluginInstall +qall'
 
 alias cr='clear && cargo run'
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
@@ -43,4 +45,4 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
 # if this is interactive shell, then bind 'kill last command' to Ctrl-x k
 if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
 
-
+# neofetch
