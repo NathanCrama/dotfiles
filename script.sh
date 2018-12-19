@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "Deleting ~/.bashrc"
-rm ~/.bashrc
 echo "Deleting ~/.bash_profile"
 rm ~/.bash_profile
 echo "Deleting ~/.vimrc"
@@ -14,9 +12,9 @@ rm -rf ~/dotfiles
 git clone https://github.com/NathanCrama/dotfiles.git ~/dotfiles
 
 ln -s ~/dotfiles/.vim ~/.vim
-ln -s ~/dotfiles/.bashrc ~/.bashrc
-ln -s ~/dotfiles/.bash_profile ~/.bash_profile
-ln -s ~/dotfiles/.vimrc ~/.vimrc
+cat ~/dotfiles/.bashrc > ~/.bashrc
+cat ~/dotfiles/.bash_profile > ~/.bash_profile
+cat ~/dotfiles/.vimrc > ~/.vimrc
 ln -s ~/dotfiles/darcula.vim ~/.vim/colors/darcula.vim 
 source ~/.bashrc
 
