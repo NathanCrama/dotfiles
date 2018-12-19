@@ -4,8 +4,6 @@ sudo pacman-mirrors --country Belgium,Netherlands,France,Germany,Luxemburg && su
 sudo pacman -Syu --noconfirm
 sudo pacman --noconfirm base-devel git vim tree wget curl openssh network-manager wpa_supplicant wireless_tools yajl
 
-echo "Deleting ~/.vim/"
-rm -rf ~/.vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 mkdir ~/.vim/colors
 ln -s ~/dotfiles/darcula.vim ~/.vim/colors/darcula.vim 

@@ -10,8 +10,6 @@ echo "Deleting ~/.bash_profile"
 rm ~/.bash_profile
 echo "Deleting ~/.vimrc"
 rm ~/.vimrc
-echo "Deleting ~/.vim/"
-rm -rf ~/.vim
 
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.bash_profile ~/.bash_profile

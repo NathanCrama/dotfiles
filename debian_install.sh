@@ -3,8 +3,6 @@
 sudo apt update -y && sudo apt upgrade -y
 sudo apt install -y build-essential git vim tree wget curl openssh-server openssh-client 
 
-echo "Deleting ~/.vim/"
-rm -rf ~/.vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 mkdir ~/.vim/colors
 ln -s ~/dotfiles/darcula.vim ~/.vim/colors/darcula.vim 
