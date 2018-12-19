@@ -11,6 +11,7 @@ alias gs="git status"
 alias gac="git add . && git commit -m" # + commit message
 alias gp="git push" # + remote & branch names
 alias force-push='git add . && git commit -m "Force push" && git push'
+alias update-repo='git reset --hard && git pull --rebase'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Use MacVim - for autocompletion
