@@ -15,7 +15,7 @@ rm -v ~/.vimrc
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 
 vim +PluginInstall +qall
-python3 ~/.vim/bundle/YouCompleteMe/install.py
+python3 ~/.vim/bundle/YouCompleteMe/install.py >> /dev/null
 
 cat ~/dotfiles/.bashrc >> ~/.bashrc
 cat ~/dotfiles/.bash_profile >> ~/.bash_profile
@@ -35,3 +35,8 @@ cd ~
 
 echo "Removing /yaourt and /package-query source code ..."
 rm -dfR ~/yaourt ~/package-query
+
+echo " "
+echo "###################################################"
+echo " Installation finished! "
+echo "###################################################"
