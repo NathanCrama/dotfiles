@@ -3,17 +3,8 @@ export PS1="\w $ \[$(tput sgr0)\]"
 alias ls='ls -AhlGF'
 alias rm='rm -v'
 
-alias iphone='open -a Simulator & disown' 
-alias pixel='~/Library/Android/sdk/tools/emulator -avd Pixel_2_XL_API_26 & disown'
-alias emulator='~/Library/Android/sdk/tools/emulator'
-
 alias network='arp -a'
 alias ping1='ping 1.1.1.1'
-
-export ANDROID_HOME=/Users/u171837/Library/Android/sdk
-export ANDROID_SDK_ROOT=$ANDROID_HOME
-
-alias clear='clear; source ~/.bashrc'
 
 # Git
 alias gs="git status"
@@ -23,6 +14,16 @@ alias gp="git push" # + remote & branch names
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Use MacVim - for autocompletion
     alias vim='mvim -v'
+    export ANDROID_HOME='~/Library/Android/sdk'
+    export ANDROID_SDK_ROOT=$ANDROID_HOME
+    alias iphone='open -a Simulator & disown' 
+    alias pixel='~/Library/Android/sdk/tools/emulator -avd Pixel_2_XL_API_26 & disown'
+    alias emulator='~/Library/Android/sdk/tools/emulator'
+fi
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    # Linux
+    clear
 fi
 
 alias InstallPlugin='vim +PluginInstall +qall'
