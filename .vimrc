@@ -10,24 +10,37 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'rust-lang/rust.vim'
+
+" Core
 Plugin 'scrooloose/nerdtree'
-Plugin 'phildawes/racer'
-Plugin 'racer-rust/vim-racer'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-scripts/indentpython.vim'
-Plugin 'vim-syntastic/syntastic'
-Plugin 'jnurmine/Zenburn'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'kien/ctrlp.vim'
-Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plugin 'w0rp/ale'
-Plugin 'jiangmiao/auto-pairs'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'vim-syntastic/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
+Plugin 'kien/ctrlp.vim'
+Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Plugin 'w0rp/ale'
+Plugin 'jiangmiao/auto-pairs'
+
+" Rust
+Plugin 'rust-lang/rust.vim'
+Plugin 'phildawes/racer'
+Plugin 'racer-rust/vim-racer'
+
+" Python
+Plugin 'vim-scripts/indentpython.vim'
+
+" Lua
 Plugin 'WolfgangMehner/lua-support'
+
+" HTML - CSS - JS
+Plugin 'mattn/emmet-vim'
+
+" Markdown
+Plugin 'gabrielelana/vim-markdown'
 
 
 " The following are examples of different formats supported.
@@ -51,7 +64,7 @@ Plugin 'WolfgangMehner/lua-support'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
-"filetype plugin on
+" filetype plugin on
 
 " Brief help
 " :PluginList       - lists configured plugins
