@@ -26,7 +26,8 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
-
+Plugin 'tpope/vim-repeat'
+Plugin 'WolfgangMehner/lua-support'
 
 
 " The following are examples of different formats supported.

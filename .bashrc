@@ -10,6 +10,7 @@ alias ping1='ping 1.1.1.1'
 alias gs="git status"
 alias gac="git add . && git commit -m" # + commit message
 alias gp="git push" # + remote & branch names
+alias force-push='git add . && git commit -m "Force push" && git push'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Use MacVim - for autocompletion

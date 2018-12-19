@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo pacman-mirrors --fasttrack && sudo pacman -Syyu --noconfirm
+sudo pacman-mirrors --fasttrack --country Belgium,Netherlands,France,Germany,Luxemburg && sudo pacman -Syyu --noconfirm
 sudo pacman -Syu --noconfirm
 sudo pacman --noconfirm base-devel git vim tree wget curl openssh network-manager wpa_supplicant wireless_tools yajl
 
