@@ -8,7 +8,7 @@ rm ~/.vimrc
 echo "Deleting ~/.vim/"
 rm -rf ~/.vim
 
-ln -s ~/dotfiles/.vim ~/.vim
+ln -s ~/dotfiles/.vim ~/
 cat ~/dotfiles/.bashrc > ~/.bashrc
 cat ~/dotfiles/.bash_profile > ~/.bash_profile
 cat ~/dotfiles/.vimrc > ~/.vimrc

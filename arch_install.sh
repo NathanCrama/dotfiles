@@ -8,9 +8,9 @@ rm ~/.vimrc
 echo "Deleting ~/.vim/"
 rm -rf ~/.vim
 
+ln -s ~/dotfiles/.vim ~/
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
-ln -s ~/dotfiles/.vim ~/.vim
 cat ~/dotfiles/.bashrc > ~/.bashrc
 cat ~/dotfiles/.bash_profile > ~/.bash_profile
 cat ~/dotfiles/.vimrc > ~/.vimrc
