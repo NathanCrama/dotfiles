@@ -13,14 +13,14 @@ rm ~/.vimrc
 echo "Deleting ~/.vim/"
 rm -rf ~/.vim
 
-ln -s ~/dotfiles/.vim ~/
 ln -s ~/dotfiles/.bashrc ~/.bashrc
 ln -s ~/dotfiles/.bash_profile ~/.bash_profile
 ln -s ~/dotfiles/.vimrc ~/.vimrc
-ln -s ~/dotfiles/darcula.vim ~/.vim/colors/darcula.vim 
-source ~/.bashrc
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+mkdir ~/.vim/colors
+ln -s ~/dotfiles/darcula.vim ~/.vim/colors/darcula.vim 
+
 vim +PluginInstall +qall
-sh ~/.vim/bundle/YouCompleteMe/install.sh | grep 0
+python3 ~/.vim/bundle/YouCompleteMe/install.py | grep 0
 
