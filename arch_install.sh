@@ -3,7 +3,7 @@
 sudo pacman -Syu
 sudo pacman base-devel git vim tree wget curl openssh network-manager wpa_supplicant wireless_tools yajl
 
-curl -L https://raw.githubusercontent.com/NathanCrama/dotfiles/master/install.sh | sh
+curl -L https://raw.githubusercontent.com/NathanCrama/dotfiles/master/script.sh | sh && ~/.vim/bundle/YouCompleteMe/install.sh | grep 0
 
 echo "alias pacman='sudo pacman'" >> ~/.bashrc
 echo "alias pm='sudo pacman -Sy'" >> ~/.bashrc
