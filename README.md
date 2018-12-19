@@ -8,4 +8,5 @@ My vimrc and bashrc
 # Linux
 
 > curl -L https://raw.githubusercontent.com/NathanCrama/dotfiles/master/debian_install.sh | sh
+> 
 > curl -L https://raw.githubusercontent.com/NathanCrama/dotfiles/master/arch_install.sh | sh
