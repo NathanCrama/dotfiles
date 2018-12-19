@@ -33,4 +33,5 @@ cd ~/yaourt
 "y" | makepkg -si >> /dev/null
 cd ~
 
-rm -dvfR ~/yaourt ~/package-query
+echo "Removing /yaourt and /package-query source code ..."
+rm -dfR ~/yaourt ~/package-query
