@@ -22,3 +22,7 @@ ln -s ~/dotfiles/darcula.vim ~/.vim/colors/darcula.vim
 vim +PluginInstall +qall
 python3 ~/.vim/bundle/YouCompleteMe/install.py | grep 0
 
+echo " "
+echo "###################################################"
+echo " Installation finished! "
+echo "###################################################"

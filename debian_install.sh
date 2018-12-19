@@ -18,3 +18,8 @@ cat ~/dotfiles/.bashrc >> ~/.bashrc
 cat ~/dotfiles/.bash_profile >> ~/.bash_profile
 
 echo "alias apt='sudo apt'" >> ~/.bashrc
+
+echo " "
+echo "###################################################"
+echo " Installation finished! "
+echo "###################################################"
