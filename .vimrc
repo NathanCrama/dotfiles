@@ -38,6 +38,7 @@ Plugin 'WolfgangMehner/lua-support'
 
 " HTML - CSS - JS
 Plugin 'mattn/emmet-vim'
+Plugin 'pangloss/vim-javascript'
 
 " Markdown
 Plugin 'gabrielelana/vim-markdown'
