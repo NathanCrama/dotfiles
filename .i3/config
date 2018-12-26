@@ -437,5 +437,6 @@ mode "$mode_gaps_outer" {
         bindsym Escape mode "default"
 }
 
+exec compton -f
 exec --no-startup-id feh --bg-scale ~/Downloads/1920x1080-2963509-archlinux-linux-minimalism___mixed-wallpapers.jpg
 

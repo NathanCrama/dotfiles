@@ -1,0 +1,29 @@
+# Guess the weather hourly
+[weather]
+command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+interval=3600
+label=
+color=#A4C2F4
+
+[CPU]
+command=sh /home/kurse/.config/i3blocks/scripts/i3cpu.sh
+interval=5
+label=
+
+[mem]
+command=sh /home/kurse/.config/i3blocks/scripts/i3mem.sh
+interval=10
+label=
+# Query my default IP address only on startup
+[ip]
+command=ip route get 1 | awk '{print $7;exit}'
+interval=once
+label=
+
+# Update time every 5 seconds
+[time]
+command=date +%T
+interval=5
+label=
+
+
