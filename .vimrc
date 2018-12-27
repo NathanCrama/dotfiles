@@ -83,6 +83,7 @@ colorscheme darcula
 " Sets line numbers
 set number
 
+" Replaced by the auto-pairs plugin
 " Auto-closes brackets 
 "inoremap " ""<left>
 "inoremap ' ''<left>
@@ -97,6 +98,8 @@ set number
 set tabstop=4
 set shiftwidth=4
 set expandtab
+set softtabstop=4
+set noexpandtab
 
 " Set auto-indent
 set autoindent
@@ -106,6 +109,10 @@ set hlsearch
 
 " syntax highlighting
 syntax on
+
+" C++ 
+set exrc
+set secure
 
 " Changes cursor in insert mode
 autocmd InsertEnter * set cul
@@ -132,14 +139,14 @@ nmap <leader>b :! clear && cargo build<CR>
 "
 nmap <F6> :NERDTreeToggle<CR>
 nmap <F8> :TagbarToggle<CR>
-    " " NERDTree customization
-    "     " Start NERDTree
+    " NERDTree customization
+        " Start NERDTree
 " autocmd VimEnter * NERDTree
-    "     " Go to previous (last accessed) window.
+        " Go to previous (last accessed) window.
 " autocmd VimEnter * wincmd p
-    "     " Focusses main window when opening a new tab
+        " Focusses main window when opening a new tab
 " autocmd BufNew * wincmd l
 
-" " Changes cursor in insert/normal mode
-" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Changes cursor in insert/normal mode
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
