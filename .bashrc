@@ -1,6 +1,6 @@
 export PS1="\w $ \[$(tput sgr0)\]"
 
-alias ls='ls -AhlGF'
+alias ls='ls -AhlGF --color=auto'
 alias rm='rm -v'
 
 alias network='arp -a'
@@ -51,3 +51,9 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
 if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
 
 neofetch
+
+alias pacman='sudo pacman'
+alias pm='sudo pacman -Sy --noconfirm'
+
+alias ipa='ip a | grep 192'
+alias sconsify='sconsify -username=skoldn'

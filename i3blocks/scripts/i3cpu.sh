@@ -5,4 +5,7 @@ case $BLOCK_BUTTON in
     2) echo "Right click" ;;
 esac
 
-mpstat | awk '$12 ~ /[0-9.]+/ { print 100 - $13"%" }'
+idle=$(top -b -n 1 | sed 's/,/ /g; s/:/ /g;' | awk '/^%Cpu0/ {print $8}')
+used=$(echo 100 - $idle | bc)
+output=$(printf "%0.1f\n" $used)
+echo "$output%"
