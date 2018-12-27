@@ -14,6 +14,13 @@ alias gp='git push' # + remote & branch names
 alias force-push='git add . && git commit -m "Force push" && git push'
 alias update-repo='git reset --hard && git pull --rebase'
 
+# Python 
+alias pyp='python3 -m pip'
+alias py='python3'
+
+# C++
+alias gpp='g++'
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Use MacVim - for autocompletion
     alias vim='mvim -v'
@@ -27,7 +34,7 @@ fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux
-    clear
+    neofetch
 fi
 
 alias InstallPlugin='vim +PluginInstall +qall'
@@ -50,4 +57,3 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
 # if this is interactive shell, then bind 'kill last command' to Ctrl-x k
 if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
 
-neofetch
