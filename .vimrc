@@ -138,7 +138,6 @@ nmap <leader>b :! clear && cargo build<CR>
 " Plugin shortcuts
 "
 nmap <F6> :NERDTreeToggle<CR>
-nmap <F8> :TagbarToggle<CR>
     " NERDTree customization
         " Start NERDTree
 " autocmd VimEnter * NERDTree
