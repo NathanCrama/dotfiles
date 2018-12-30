@@ -1,6 +1,5 @@
 export PS1="\w $ \[$(tput sgr0)\]"
 
-alias ls='ls -AhlGF --color=auto'
 alias rm='rm -v'
 
 alias network='arp -a'
@@ -23,6 +22,7 @@ alias gpp='g++'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Use MacVim - for autocompletion
+    alias ls='ls -AhlGF'
     alias vim='mvim -v'
     export ANDROID_HOME='~/Library/Android/sdk'
     export ANDROID_SDK_ROOT=$ANDROID_HOME
@@ -34,6 +34,7 @@ fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux
+	alias ls='ls -AhlGF --color=auto'
     neofetch
 fi
 
