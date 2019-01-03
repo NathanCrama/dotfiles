@@ -1,6 +1,7 @@
 export PS1="\w $ \[$(tput sgr0)\]"
 
 alias rm='rm -v'
+alias hcat='highlight --force'
 
 alias network='arp -a'
 alias ping1='ping 1.1.1.1'
@@ -12,6 +13,7 @@ alias gac='git add . && git commit -m' # + commit message
 alias gp='git push' # + remote & branch names
 alias force-push='git add . && git commit -m "Force push" && git push'
 alias update-repo='git reset --hard && git pull --rebase'
+
 
 # Python 
 alias pyp='python3 -m pip'
