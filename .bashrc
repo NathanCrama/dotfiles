@@ -8,7 +8,7 @@ alias ping1='ping 1.1.1.1'
 
 # Git
 alias gs='git status'
-alias st='status'
+alias gl='git log'
 alias gac='git add . && git commit -m' # + commit message
 alias gp='git push' # + remote & branch names
 alias force-push='git add . && git commit -m "Force push" && git push'
@@ -30,13 +30,16 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export ANDROID_SDK_ROOT=$ANDROID_HOME
     alias iphone='open -a Simulator & disown' 
     alias pixel='~/Library/Android/sdk/tools/emulator -avd Pixel_2_XL_API_26 & disown'
-    alias cdmob='cd ~/mobULIS/mobulis-xamarin'
+    alias cdmob='cd ~/mobULIS/mobulis-xamarin && git status'
     alias emulator='~/Library/Android/sdk/tools/emulator'
 fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux
 	alias ls='ls -AhlGF --color=auto'
+	alias pacman='sudo pacman'
+	alias pm='sudo pacman -Sy --noconfirm'
+
     neofetch
 fi
 
@@ -59,9 +62,6 @@ export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
 if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
 # if this is interactive shell, then bind 'kill last command' to Ctrl-x k
 if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
-
-alias pacman='sudo pacman'
-alias pm='sudo pacman -Sy --noconfirm'
 
 alias ipa='ip a | grep 192'
 alias sconsify='sconsify -username=skoldn'
