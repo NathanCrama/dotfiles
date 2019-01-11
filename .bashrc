@@ -1,7 +1,7 @@
 export PS1="\w $ \[$(tput sgr0)\]"
 
 alias rm='rm -v'
-alias hcat='highlight --force'
+alias cat='highlight --force'
 
 alias network='arp -a'
 alias ping1='ping 1.1.1.1'
@@ -14,13 +14,15 @@ alias gp='git push' # + remote & branch names
 alias force-push='git add . && git commit -m "Force push" && git push'
 alias update-repo='git reset --hard && git pull --rebase'
 
-
 # Python 
 alias pyp='python3 -m pip'
 alias py='python3'
 
 # C++
 alias gpp='g++'
+
+# Random
+alias pipes='pipes.sh'
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Use MacVim - for autocompletion
