@@ -31,7 +31,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     export ANDROID_HOME='~/Library/Android/sdk'
     export ANDROID_SDK_ROOT=$ANDROID_HOME
     alias iphone='open -a Simulator & disown' 
-    alias pixel='~/Library/Android/sdk/tools/emulator -avd Pixel_2_XL_API_26 & disown'
+    alias pixel='~/Library/Android/sdk/tools/emulator -avd Pixel_2_XL_API_28 & disown'
     alias cdmob='cd ~/mobULIS/mobulis-xamarin && git status'
     alias emulator='~/Library/Android/sdk/tools/emulator'
 fi
