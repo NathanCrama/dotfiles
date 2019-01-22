@@ -7,8 +7,11 @@ alias network='arp -a'
 alias ping1='ping 1.1.1.1'
 
 # Git
+alias g='git'
 alias gs='git status'
-alias gl='git log'
+alias gl='git log --oneline'
+alias gb='git branch'
+alias gm='git merge'
 alias gac='git add . && git commit -m' # + commit message
 alias gp='git push' # + remote & branch names
 alias force-push='git add . && git commit -m "Force push" && git push'
@@ -28,12 +31,14 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     # Use MacVim - for autocompletion
     alias ls='ls -AhlGF'
     alias vim='mvim -v'
-    export ANDROID_HOME='~/Library/Android/sdk'
-    export ANDROID_SDK_ROOT=$ANDROID_HOME
     alias iphone='open -a Simulator & disown' 
     alias pixel='~/Library/Android/sdk/tools/emulator -avd Pixel_2_XL_API_28 & disown'
     alias cdmob='cd ~/mobULIS/mobulis-xamarin && git status'
     alias emulator='~/Library/Android/sdk/tools/emulator'
+
+    export ANDROID_HOME='~/Library/Android/sdk'
+    export ANDROID_SDK_ROOT=$ANDROID_HOME
+	export PATH=$PATH:/Users/u171837/scripts/
 fi
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
