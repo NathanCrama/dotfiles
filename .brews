@@ -1,7 +1,10 @@
 automake
+boost
 cmake
 cmatrix
 cocoapods
+coreutils
+curl
 dart-lang/dart/dart
 fx
 fzf
@@ -17,6 +20,7 @@ gtkmm3
 highlight
 hstr
 htop
+httpd
 ideviceinstaller
 imlib2
 ios-deploy
@@ -28,14 +32,18 @@ mono
 mysql
 ncurses
 neofetch
+nmap
 openttd
 pidof
 pipes-sh
+qt
 rename
+ruby
 rust
 smartmontools
 speedtest-cli
 stress
+telnet
 terminal-notifier
 tmux
 tree
