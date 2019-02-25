@@ -1,6 +1,7 @@
 export PS1="\w $ \[$(tput sgr0)\]"
 
 alias rm='rm -v'
+alias lls='ls'
 alias hcat='highlight --force'
 
 alias network='arp -a'
@@ -61,6 +62,7 @@ fi
 # TMUX
 alias tmux="TERM=screen-256color-bce tmux"
 alias kill-tmux="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
+alias kimux='tmux kill-session'
 
 
 alias InstallPlugin='vim +PluginInstall +qall'
@@ -82,5 +84,6 @@ export PROMPT_COMMAND="history -a; history -n; ${PROMPT_COMMAND}"
 if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
 # if this is interactive shell, then bind 'kill last command' to Ctrl-x k
 if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
+
 
 
