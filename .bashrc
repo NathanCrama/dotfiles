@@ -26,7 +26,13 @@ alias gpp='g++'
 
 # Random
 alias pipes='pipes.sh'
+alias cr='cargo run'
 
+md(){
+	pandoc $1 | w3m -T text/html
+}
+
+#OSX
 if [[ "$OSTYPE" == "darwin"* ]]; then
     # Use MacVim - for autocompletion
     alias ls='ls -AhlGF'
@@ -35,12 +41,14 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
     alias pixel='~/Library/Android/sdk/tools/emulator -avd Pixel_2_XL_API_28 & disown'
     alias cdmob='cd ~/mobULIS/mobulis-xamarin && git status'
     alias emulator='~/Library/Android/sdk/tools/emulator'
+	alias sshmob='ssh u171837@serv737.segi.ulg.ac.be'
 
     export ANDROID_HOME='~/Library/Android/sdk'
     export ANDROID_SDK_ROOT=$ANDROID_HOME
 	export PATH=$PATH:/Users/u171837/scripts/
 fi
 
+#LINUX
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     # Linux
 	alias ls='ls -AhlGF --color=auto'
@@ -49,6 +57,11 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
     neofetch
 fi
+
+# TMUX
+alias tmux="TERM=screen-256color-bce tmux"
+alias kill-tmux="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
+
 
 alias InstallPlugin='vim +PluginInstall +qall'
 
@@ -70,5 +83,4 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
 # if this is interactive shell, then bind 'kill last command' to Ctrl-x k
 if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
 
-alias ipa='ip a | grep 192'
-alias sconsify='sconsify -username=skoldn'
+
