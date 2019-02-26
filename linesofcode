@@ -1,0 +1,18 @@
+#!/bin/sh
+
+extension1=$1
+extension2=$2
+extension3=$3
+
+if [[ -z "${extension1// }" ]]; then
+	echo "No extension given."
+elif [[ -z "${extension2// }" ]]; then
+	echo "1 arg"
+	find . -name '*.'$extension1 | xargs wc -l
+elif [[ -z "${extension3// }" ]]; then
+	echo "2 args"
+	find . \( -name '*.'$extension1 -o -name '*.'$extension2 \) | xargs wc -l
+else
+	echo "3 args"
+	find . \( -name '*.'$extension1 -o -name '*.'$extension2 -o -name '*.'$extension3 \) | xargs wc -l
+fi
