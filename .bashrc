@@ -50,7 +50,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	alias cc='gcc-8'
 	alias g++='g++-8'
 	alias c++='c++-8'
-
 fi
 
 #LINUX
@@ -64,7 +63,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 fi
 
 # TMUX
-alias tmux="TERM=screen-256color-bce tmux"
+alias tmux="tmux -2"
 alias kill-tmux="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
 alias kimux='tmux kill-session'
 
