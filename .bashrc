@@ -1,7 +1,7 @@
 export PS1="\w $ \[$(tput sgr0)\]"
 
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
-  exec tmux -2
+	exec tmux -2
 fi
 
 alias rm='rm -v'
@@ -26,12 +26,6 @@ alias update-repo='git reset --hard && git pull --rebase'
 alias pyp='python3 -m pip'
 alias py='python3'
 
-# C++
-alias gcc='gcc-8'
-alias cc='gcc-8'
-alias g++='g++-8'
-alias c++='c++-8'
-
 # Random
 alias pipes='pipes.sh'
 alias cr='cargo run'
@@ -42,28 +36,35 @@ md(){
 
 #OSX
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    # Use MacVim - for autocompletion
-    alias ls='ls -AhlGF'
-    alias vim='mvim -v'
-    alias iphone='open -a Simulator & disown' 
-    alias pixel='~/Library/Android/sdk/tools/emulator -avd Pixel_2_XL_API_28 & disown'
-    alias cdmob='cd ~/mobULIS/mobulis-xamarin && git status'
-    alias emulator='~/Library/Android/sdk/tools/emulator'
+	# Use MacVim - for autocompletion
+	alias ls='ls -AhlGF'
+	alias vim='mvim -v'
+	alias iphone='open -a Simulator & disown' 
+	alias pixel='~/Library/Android/sdk/tools/emulator -avd Pixel_2_XL_API_28 & disown'
+	alias cdmob='cd ~/mobULIS/mobulis-xamarin && git status'
+	alias emulator='~/Library/Android/sdk/tools/emulator'
 	alias sshmob='ssh u171837@serv737.segi.ulg.ac.be'
 
-    export ANDROID_HOME='~/Library/Android/sdk'
-    export ANDROID_SDK_ROOT=$ANDROID_HOME
+	export ANDROID_HOME='~/Library/Android/sdk'
+	export ANDROID_SDK_ROOT=$ANDROID_HOME
 	export PATH=$PATH:/Users/u171837/scripts/
+
+	# C++
+	alias gcc='gcc-8'
+	alias cc='gcc-8'
+	alias g++='g++-8'
+	alias c++='c++-8'
+
 fi
 
 #LINUX
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
-    # Linux
+	# Linux
 	alias ls='ls -AhlGF --color=auto'
 	alias pacman='sudo pacman'
 	alias pm='sudo pacman -Sy --noconfirm'
 
-    neofetch
+	neofetch
 fi
 
 # TMUX
