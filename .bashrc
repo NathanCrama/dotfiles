@@ -1,9 +1,12 @@
 export PS1="\w $ \[$(tput sgr0)\]"
 
+<<<<<<< HEAD
 if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
 	exec tmux -2
 fi
 
+=======
+>>>>>>> Force push
 alias rm='rm -v'
 alias lls='ls'
 alias hcat='highlight --out-format=xterm256 --force'
