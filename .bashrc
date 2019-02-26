@@ -1,5 +1,9 @@
 export PS1="\w $ \[$(tput sgr0)\]"
 
+if command -v tmux &> /dev/null && [ -n "$PS1" ] && [[ ! "$TERM" =~ screen ]] && [[ ! "$TERM" =~ tmux ]] && [ -z "$TMUX" ]; then
+  exec tmux -2
+fi
+
 alias rm='rm -v'
 alias lls='ls'
 alias hcat='highlight --out-format=xterm256 --force'
@@ -23,7 +27,10 @@ alias pyp='python3 -m pip'
 alias py='python3'
 
 # C++
-alias gpp='g++'
+alias gcc='gcc-8'
+alias cc='gcc-8'
+alias g++='g++-8'
+alias c++='c++-8'
 
 # Random
 alias pipes='pipes.sh'
@@ -86,4 +93,4 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
 if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
 
 
-
+# tmux -2

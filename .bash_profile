@@ -14,3 +14,6 @@ export PATH="/usr/local/opt/curl/bin:$PATH"
 export SDKMAN_DIR="/Users/u171837/.sdkman"
 [[ -s "/Users/u171837/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/u171837/.sdkman/bin/sdkman-init.sh"
 export PATH="/usr/local/opt/qt/bin:$PATH"
+
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/usr/local/sbin:$PATH"
