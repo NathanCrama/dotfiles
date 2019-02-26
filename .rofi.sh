@@ -1,6 +1,6 @@
 #!/bin/sh 
 
-bg_color=#333333
+bg_color=#282828
 text_color=#fc8800
 htext_color=#ffffff
 
