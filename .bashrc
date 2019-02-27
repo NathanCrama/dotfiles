@@ -2,7 +2,6 @@ export PS1="\w $ \[$(tput sgr0)\]"
 
 alias rm='rm -v'
 alias lls='ls'
-alias hcat='highlight --out-format=xterm256 --force'
 
 alias network='arp -a'
 alias ping1='ping 1.1.1.1'
@@ -67,6 +66,8 @@ alias tmux="tmux -2"
 alias kill-tmux="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
 alias kimux='tmux kill-session'
 
+# Nerdy utils
+alias sc='scim'
 
 alias InstallPlugin='vim +PluginInstall +qall'
 
@@ -89,4 +90,8 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-r": "\C-a hstr -- \C-j"'; fi
 if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
 
 
-# tmux -2
+# if [[ ! $TERM =~ screen  ]]; then
+# 	    exec tmux -2
+# fi
+
+alias shebang='echo "#!/usr/bin/env bash"'

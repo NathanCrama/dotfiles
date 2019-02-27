@@ -57,11 +57,9 @@ set number
 " set shellcmdflag=-ic
 
 " Fixes tab length
-set tabstop=4
-set shiftwidth=4
-set expandtab
-set softtabstop=4
-set noexpandtab
+" 12341234123412341234
+"q  q   q   q   q
+set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
 
 " Set auto-indent
 set autoindent
