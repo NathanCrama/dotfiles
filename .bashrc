@@ -2,7 +2,7 @@ export PS1="\w $ \[$(tput sgr0)\]"
 
 alias rm='rm -v'
 alias lls='ls'
-alias hcat='highlight --force'
+alias hcat='highlight --out-format=xterm256 --force'
 
 alias network='arp -a'
 alias ping1='ping 1.1.1.1'
