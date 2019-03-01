@@ -14,7 +14,6 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-syntastic/syntastic'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
@@ -23,6 +22,8 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'w0rp/ale'
 Plugin 'jiangmiao/auto-pairs'
+
+Plugin 'natebosch/vim-lsc'
 
 " Rust
 Plugin 'rust-lang/rust.vim'
@@ -39,6 +40,9 @@ Plugin 'WolfgangMehner/lua-support'
 Plugin 'mattn/emmet-vim'
 Plugin 'pangloss/vim-javascript'
 
+" Dart
+Plugin 'dart-lang/dart-vim-plugin'
+
 " Markdown
 Plugin 'gabrielelana/vim-markdown'
 
@@ -46,6 +50,9 @@ Plugin 'gabrielelana/vim-markdown'
 call vundle#end()            " required
 filetype plugin indent on    " required
 " ==========================================================================================
+" Dart lang completion? 
+let g:lsc_server_commands = {'dart': 'dart_language_server'}
+let g:loaded_syntastic_dart_dartanalyzer_checker = 0
 
 " Color scheme
 colorscheme darcula
