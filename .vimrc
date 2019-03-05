@@ -101,17 +101,19 @@ nmap <leader>r :! clear && cargo run<CR>
 nmap <leader>b :! clear && cargo build<CR>
 
 
+set completeopt-=preview
+
 
 " Plugin shortcuts
 "
 nmap <F6> :NERDTreeToggle<CR>
     " NERDTree customization
         " Start NERDTree
-autocmd VimEnter * NERDTree
+" autocmd VimEnter * NERDTree
         " Go to previous (last accessed) window.
-autocmd VimEnter * wincmd p
+" autocmd VimEnter * wincmd p
         " Focusses main window when opening a new tab
-autocmd BufNew * wincmd l
+" autocmd BufNew * wincmd l
 
 " Changes cursor in insert/normal mode
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -131,3 +133,5 @@ cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W')
 cnoreabbrev <expr> X ((getcmdtype() is# ':' && getcmdline() is# 'X')?('x'):('X'))
 cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q'))
 cnoreabbrev <expr> WQ ((getcmdtype() is# ':' && getcmdline() is# 'WQ')?('wq'):('WQ'))
+
+set hidden
