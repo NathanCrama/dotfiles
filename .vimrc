@@ -18,7 +18,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tpope/vim-repeat'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
 Plugin 'w0rp/ale'
 Plugin 'jiangmiao/auto-pairs'
@@ -48,9 +48,8 @@ Plugin 'gabrielelana/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
-filetype plugin indent on    " required
 " ==========================================================================================
-" Dart lang completion? 
+" Dart lang completion
 let g:lsc_server_commands = {'dart': 'dart_language_server'}
 let g:loaded_syntastic_dart_dartanalyzer_checker = 0
 
@@ -64,14 +63,15 @@ set number
 " set shellcmdflag=-ic
 
 " Fixes tab length
-" 12341234123412341234
-"q  q   q   q   q
-set tabstop=4 softtabstop=0 expandtab shiftwidth=4 smarttab
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set softtabstop=0
+set smarttab
 
-" Set auto-indent
 set autoindent
 filetype indent on
-set smartindent
+filetype plugin indent on    " required
 set hlsearch
 
 " syntax highlighting
@@ -109,15 +109,29 @@ set completeopt-=preview
 nmap <F6> :NERDTreeToggle<CR>
     " NERDTree customization
         " Start NERDTree
-" autocmd VimEnter * NERDTree
+autocmd VimEnter * NERDTree
         " Go to previous (last accessed) window.
-" autocmd VimEnter * wincmd p
+autocmd VimEnter * wincmd p
         " Focusses main window when opening a new tab
-" autocmd BufNew * wincmd l
+autocmd BufNew * wincmd l
 
 " Changes cursor in insert/normal mode
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+    " CtrlP
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlP'
+let g:ctrlp_working_path_mode = 'ra'
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+let g:ctrlp_user_command = 'find %s -type f'        " MacOSX/Linux
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 " #################################################################
 "
@@ -133,5 +147,6 @@ cnoreabbrev <expr> W ((getcmdtype() is# ':' && getcmdline() is# 'W')?('w'):('W')
 cnoreabbrev <expr> X ((getcmdtype() is# ':' && getcmdline() is# 'X')?('x'):('X'))
 cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q'))
 cnoreabbrev <expr> WQ ((getcmdtype() is# ':' && getcmdline() is# 'WQ')?('wq'):('WQ'))
+cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('Wq'))
 
 set hidden

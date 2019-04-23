@@ -6,3 +6,4 @@ brew missing
 apm upgrade -c false
 echo "mas upgrade..."
 mas upgrade
+flutter upgrade

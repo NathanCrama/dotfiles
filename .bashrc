@@ -53,6 +53,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	alias cc='gcc-8'
 	alias g++='g++-8'
 	alias c++='c++-8'
+  alias ctags="`brew --prefix`/bin/ctags"
 fi
 
 #LINUX
@@ -75,9 +76,13 @@ alias sc='scim'
 
 alias InstallPlugin='vim +PluginInstall +qall'
 
+# Rust
 alias cr='clear && cargo run'
 export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 export PATH="$HOME/.cargo/bin:$PATH"
+
+# Flutter
+alias fr='clear && flutter run'
 
 # HSTR configuration - add this to ~/.bashrc
 alias hh=hstr                    # hh to be alias for hstr
