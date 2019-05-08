@@ -1,0 +1,62 @@
+#!/usr/bin/env bash
+
+FILE=$1
+
+if [[ -z ${FILE} ]]; then
+    echo "No argument provided!"
+    exit 1
+fi
+
+if [[ ! -f ${FILE} ]]; then
+    echo "HCAT: $FILE is not a file"
+    exit 1
+fi
+
+default_syntax(){
+    highlight --force --out-format=xterm256 ${FILE}
+}
+
+bash_syntax(){
+    highlight --syntax=sh --out-format=xterm256 ${FILE}
+}
+
+#dirname=$(dirname $FILE)
+base_name=$(basename ${FILE})
+
+# ${string:position:length}
+first_character="${base_name:0:1}"
+
+if [[ ${first_character} == "." ]]; then # Dotfile
+    bash_syntax
+elif  [[ ! ${base_name} == *"."* ]]; then # if name doesn't contain "." => has no extension
+    #TODO: Read first line and scan for sh / bash / python / perl / lua
+    shebang=$(head -1 ${FILE})
+
+    case "$shebang" in
+        *sh*)
+            bash_syntax
+            ;;
+
+        *python*)
+            highlight --syntax=py --out-format=xterm256 ${FILE}
+            ;;
+
+        *lua*)
+            highlight --syntax=lua --out-format=xterm256 ${FILE}
+            ;;
+
+        *node*)
+            highlight --syntax=js --out-format=xterm256 ${FILE}
+            ;;
+
+        *perl*)
+            highlight --syntax=perl --out-format=xterm256 ${FILE}
+            ;;
+        *)
+            bash_syntax
+            ;;
+    esac
+else
+    default_syntax
+fi
+

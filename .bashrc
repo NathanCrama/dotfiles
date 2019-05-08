@@ -28,6 +28,7 @@ alias py='python3'
 # Random
 alias pipes='pipes.sh'
 alias cr='cargo run'
+alias browse='w3m duckduckgo.com'
 
 md(){
 	pandoc $1 | w3m -T text/html
