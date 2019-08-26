@@ -27,3 +27,6 @@ fi
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/u171837/.sdkman"
 [[ -s "/Users/u171837/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/u171837/.sdkman/bin/sdkman-init.sh"
+
+export EDITOR="/usr/local/bin/vim"
+export PATH="/usr/local/opt/ncurses/bin:$PATH"

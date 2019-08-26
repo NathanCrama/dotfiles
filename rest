@@ -1,0 +1,118 @@
+#!/usr/bin/env python3
+
+import requests
+import json
+import argparse
+import os
+from django.core.validators import URLValidator
+from django.core.exceptions import ValidationError
+from distutils.util import strtobool
+from xml.etree import ElementTree
+from bs4 import BeautifulSoup
+
+auth = ('mobulis', 'Anu|3is')
+
+parser = argparse.ArgumentParser()
+parser.add_argument('url', type=str, help='The url to test')
+parser.add_argument('-m', '--method', type=str, help='The http method to use', default='get', nargs='?', const='get')
+parser.add_argument('-a', '--auth', type=str, help='Activate/deactivate basic auth. Default: True', default='true', const='true', nargs='?')
+
+args = parser.parse_args()
+
+url = args.url
+method = args.method
+with_auth = strtobool(args.auth)
+
+def is_valid_url(string):
+    val = URLValidator()
+    try:
+        val(string)
+        return True
+    except ValidationError:
+        try:
+            with_http = "https://" + string
+            val(with_http)
+            global url
+            url = with_http
+            return True
+        except ValidationError:
+            return False
+
+
+def is_json(string):
+    try:
+        json.loads(string)
+    except ValueError:
+        return False
+    return True
+
+
+def is_xml(string):
+    try:
+        ElementTree.fromstring(string)
+    except Exception as e:
+        print(e)
+        return False
+    return True
+
+
+def is_html(string):
+    return bool(BeautifulSoup(string, "html.parser").find())
+
+
+file_uri = '/tmp/rest_temp'
+def write_to_temp_file(things):
+    with open(file_uri, 'w') as temp_file:
+        temp_file.write(things)         
+
+
+def send(url, method):
+    if method == 'get':
+        if with_auth == 1:
+            r = requests.get(url, auth=auth)
+        else:
+            r = requests.get(url)
+            
+        if r.status_code > 400:
+            print("Status code", r.status_code, "for", method, "request on url", url)
+            return
+
+
+        response = (r.text)
+        write_to_temp_file(response)
+        bash = ''
+
+        if is_json(response):
+            print("JSON")
+            bash = '''fx {}'''.format(file_uri)
+            os.system(bash)
+            return
+        elif is_xml(response):
+            print("XML")
+            bash = '''xmlstarlet el {}'''.format(file_uri)
+            os.system(bash)
+            return
+        elif is_html(response):
+            print("HTML")
+            bash = '''w3m -T text/html {}'''.format(file_uri)
+            os.system(bash)
+            return
+        else:
+            print("TEXT")
+            bash = '''less {}'''.format(file_uri)
+            os.system(bash)
+            return
+
+
+if is_valid_url(url):
+    # URL checked and is properly formatted
+    if method == 'get' or method == 'put' or method == 'post' or method == 'delete':
+        # good method
+        send(url, method)
+    else:
+        print('ERROR: wtf is that method')
+else:
+    print('ERROR: Not a valid URL.')
+
+
+# requests.get(url, data, auth)

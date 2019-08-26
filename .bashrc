@@ -13,7 +13,7 @@ alias ping1='ping 1.1.1.1'
 # Git
 alias g='git'
 alias gs='git status'
-alias gl='git log --oneline'
+alias gl='git --no-pager log --oneline --decorate=short --pretty=oneline -n20'
 alias gb='git branch'
 alias gm='git merge'
 alias gac='git add . && git commit -m' # + commit message
@@ -26,7 +26,6 @@ alias pyp='python3 -m pip'
 alias py='python3'
 
 # Random
-alias pipes='pipes.sh'
 alias cr='cargo run'
 alias browse='w3m duckduckgo.com'
 
@@ -50,10 +49,6 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 	export PATH=$PATH:/Users/u171837/scripts/
 
 	# C++
-	alias gcc='gcc-8'
-	alias cc='gcc-8'
-	alias g++='g++-8'
-	alias c++='c++-8'
   alias ctags="`brew --prefix`/bin/ctags"
 fi
 
@@ -105,3 +100,4 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
 # fi
 
 alias shebang='echo "#!/usr/bin/env bash"'
+alias svg='rsvg-convert -h 200'
