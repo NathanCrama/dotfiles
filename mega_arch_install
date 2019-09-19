@@ -8,4 +8,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 git clone https://github.com/NathanCrama/dotfiles.git
 
-sudo pacman -Syu ranger w3m pandoc tree wine wine-mono ncdu 
+sudo pacman -Syu
+sudo pacman -Rns palemoon-bin
+sudo pacman -Syu firefox ranger w3m pandoc tree wine wine-mono ncdu tmux neofetch
+yay asus-kbd-backlight
