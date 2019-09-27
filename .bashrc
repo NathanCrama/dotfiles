@@ -33,6 +33,10 @@ md(){
 	pandoc $1 | w3m -T text/html
 }
 
+gipu() {
+  git add -A && git commit -m $1 && git push
+}
+
 #OSX
 if [[ "$OSTYPE" == "darwin"* ]]; then
 	# Use MacVim - for autocompletion
@@ -101,3 +105,6 @@ if [[ $- =~ .*i.* ]]; then bind '"\C-xk": "\C-a hstr -k \C-j"'; fi
 
 alias shebang='echo "#!/usr/bin/env bash"'
 alias svg='rsvg-convert -h 200'
+
+neofetch
+

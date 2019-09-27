@@ -30,3 +30,4 @@ export SDKMAN_DIR="/Users/u171837/.sdkman"
 
 export EDITOR="/usr/local/bin/vim"
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
+export PATH="$PATH:~/nand2tetris/nand2tetris-suite/tools"
