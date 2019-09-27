@@ -1,0 +1,15 @@
+#!/usr/bin/env python3
+
+with open('.gitignore', 'r') as code, open('.gitignore_edit', 'w') as out:
+    for line in code:
+        if not line.startswith('#'):
+            out.write(line + '\n')
+
+with open('.gitignore_edit', 'r') as code, open('.gitignore', 'w') as out:
+    for line in code:
+        cleanedLine = line.strip()
+        if cleanedLine:
+            out.write(cleanedLine+'\n')
+
+import os
+os.remove('.gitignore_edit')
