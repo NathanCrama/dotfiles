@@ -82,8 +82,6 @@ set exrc
 set secure
 
 " Changes cursor in insert mode
-autocmd InsertEnter * set cul
-autocmd InsertLeave * set nocul
 let &t_SI = "\e[3 q"
 let &t_EI = "\e[1 q"
 
