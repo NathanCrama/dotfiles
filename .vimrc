@@ -57,7 +57,7 @@ let g:loaded_syntastic_dart_dartanalyzer_checker = 0
 " colorscheme darcula
 
 " Sets line numbers
-set number
+set relativenumber
 
 " To use bash aliases in vim
 " set shellcmdflag=-ic
