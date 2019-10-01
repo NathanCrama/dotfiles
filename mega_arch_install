@@ -1,7 +1,3 @@
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si
-
 cd
 
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
@@ -12,3 +8,7 @@ sudo pacman -Syu --noconfirm
 sudo pacman -Rns palemoon-bin --noconfirm
 sudo pacman -Syu firefox ranger w3m pandoc tree wine wine-mono ncdu tmux neofetch --noconfirm
 yay asus-kbd-backlight
+
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si

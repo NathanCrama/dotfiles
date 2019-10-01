@@ -54,7 +54,7 @@ let g:lsc_server_commands = {'dart': 'dart_language_server'}
 let g:loaded_syntastic_dart_dartanalyzer_checker = 0
 
 " Color scheme
-colorscheme darcula
+" colorscheme darcula
 
 " Sets line numbers
 set number
