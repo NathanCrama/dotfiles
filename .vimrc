@@ -148,3 +148,8 @@ cnoreabbrev <expr> WQ ((getcmdtype() is# ':' && getcmdline() is# 'WQ')?('wq'):('
 cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('Wq'))
 
 set hidden
+
+set background=dark
+colorscheme hybrid_material
+set cursorline
+hi CursorLine term=bold cterm=bold guibg=Grey40
