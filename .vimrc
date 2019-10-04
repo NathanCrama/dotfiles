@@ -149,6 +149,6 @@ cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('
 
 set hidden
 
-" colorscheme hybrid_material
+colorscheme hybrid_material
 set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey40
