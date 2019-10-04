@@ -63,8 +63,8 @@ set relativenumber
 " set shellcmdflag=-ic
 
 " Fixes tab length
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 set expandtab
 set softtabstop=0
 set smarttab
@@ -149,7 +149,6 @@ cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('
 
 set hidden
 
-set background=dark
-colorscheme hybrid_material
+" colorscheme hybrid_material
 set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey40
