@@ -49,6 +49,9 @@ Plugin 'gabrielelana/vim-markdown'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 " ==========================================================================================
+
+let g:ycm_global_ycm_extra_conf = '~/dotfiles/.ycm_extra_conf.py'
+
 " Dart lang completion
 let g:lsc_server_commands = {'dart': 'dart_language_server'}
 let g:loaded_syntastic_dart_dartanalyzer_checker = 0
@@ -149,6 +152,5 @@ cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('
 
 set hidden
 
-colorscheme hybrid_material
 set cursorline
 hi CursorLine term=bold cterm=bold guibg=Grey40
