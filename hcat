@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
 FILE=$1
+FORMAT="--out-format=xterm256"
+
+hl(){
+    highlight --syntax=$1 $FORMAT ${FILE}
+}
 
 if [[ -z ${FILE} ]]; then
     echo "No argument provided!"
@@ -12,12 +17,8 @@ if [[ ! -f ${FILE} ]]; then
     exit 1
 fi
 
-default_syntax(){
+default_highlight(){
     highlight --force --out-format=xterm256 ${FILE}
-}
-
-bash_syntax(){
-    highlight --syntax=sh --out-format=xterm256 ${FILE}
 }
 
 #dirname=$(dirname $FILE)
@@ -27,36 +28,41 @@ base_name=$(basename ${FILE})
 first_character="${base_name:0:1}"
 
 if [[ ${first_character} == "." ]]; then # Dotfile
-    bash_syntax
+    if [[ $FILE == *"vim"* ]]; then
+        # vimrc?
+        hl vim
+    else
+        bash_syntax
+    fi
 elif  [[ ! ${base_name} == *"."* ]]; then # if name doesn't contain "." => has no extension
     #TODO: Read first line and scan for sh / bash / python / perl / lua
     shebang=$(head -1 ${FILE})
 
     case "$shebang" in
         *sh*)
-            bash_syntax
+            hl sh
             ;;
 
         *python*)
-            highlight --syntax=py --out-format=xterm256 ${FILE}
+            hl py 
             ;;
 
         *lua*)
-            highlight --syntax=lua --out-format=xterm256 ${FILE}
+            hl lua
             ;;
 
         *node*)
-            highlight --syntax=js --out-format=xterm256 ${FILE}
+            hl js
             ;;
 
         *perl*)
-            highlight --syntax=perl --out-format=xterm256 ${FILE}
+            hl perl
             ;;
         *)
-            bash_syntax
+            hl sh 
             ;;
     esac
 else
-    default_syntax
+    default_highlight
 fi
 
