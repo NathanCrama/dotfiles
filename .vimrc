@@ -17,17 +17,14 @@ Plugin 'w0rp/ale'
 
 Plugin 'jiangmiao/auto-pairs'
 
+" Dart
+Plugin 'dart-lang/dart-vim-plugin'
+
 " Rust
 " Plugin 'rust-lang/rust.vim'
-" Python
-" Plugin 'vim-scripts/indentpython.vim'
-"" HTML - CSS - JS
-" Plugin 'mattn/emmet-vim'
-" Plugin 'pangloss/vim-javascript'
 
 "" All of your Plugins must be added before the following line
 call vundle#end()   
-" ==========================================================================================
 
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/.ycm_extra_conf.py'
 
