@@ -21,7 +21,7 @@ echo "> flutter upgrade"
 echo ""
 flutter upgrade
 
-echo ""
-echo "> rustup upgrade"
-echo ""
-rustup update
+# echo ""
+# echo "> rustup upgrade"
+# echo ""
+# rustup update

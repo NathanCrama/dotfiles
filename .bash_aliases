@@ -101,7 +101,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     }
 
 
-    alias ls='ls -AlGH --color=auto'
+    alias ls='ls -Alh --color=auto'
     alias pacman='yay'
     alias yy='yay --noconfirm'
     alias yaourt='yay'
