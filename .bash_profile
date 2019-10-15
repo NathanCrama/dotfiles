@@ -4,6 +4,10 @@ if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
 
+if [[ -f ~/dotfiles/.bash_aliases ]]; then
+    . ~/dotfiles/.bash_aliases
+fi
+
 export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH="/usr/local/opt/qt/bin:$PATH"
 export PATH="/usr/local/opt/curl/bin:$PATH"
@@ -31,3 +35,8 @@ export SDKMAN_DIR="/Users/u171837/.sdkman"
 export EDITOR="/usr/local/bin/vim"
 export PATH="/usr/local/opt/ncurses/bin:$PATH"
 export PATH="$PATH:~/nand2tetris/nand2tetris-suite/tools"
+export LC_ALL="en_US.UTF-8"
+
+export ANDROID_HOME='~/Library/Android/sdk'
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+export PATH=$PATH:/Users/u171837/scripts/

@@ -1,6 +1,4 @@
 # COREUTILS
-
-alias ls='ls -AlGH --color=auto'
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
@@ -11,13 +9,17 @@ alias np='nano -w PKGBUILD'
 alias more=less
 
 alias make='time nice make -j $(nproc)'
-alias pmake='time nice make -j 4 --load-average=4'
+alias pmake='time nice make -j $(nproc) --load-average=$(nproc)'
 
 alias rm='rm -v'
 
-# PACKAGE MANAGEMENT
-alias pacman='yay'
-alias yy='yay --noconfirm'
+# TMUX
+alias tmux="tmux -2"
+alias kill-tmux="tmux ls | grep : | cut -d. -f1 | awk '{print substr($1, 0, length($1)-1)}' | xargs kill"
+alias kimux='tmux kill-session'
+
+# Nerdy utils
+alias sc='scim'
 
 # GIT 
 alias gs='git status'
@@ -26,65 +28,115 @@ alias gb='git branch'
 alias gm='git merge'
 alias gac='git add . && git commit -m' # + commit message
 alias gp='git push' # + remote & branch names
+alias force-push='git add . && git commit -m "Force push" && git push'
+alias update-repo='git reset --hard && git pull --rebase'
 gipu() {
     git add -A && git commit -m $1 $2 $3 $4 && git push 
+}
+
+# MISC
+alias browse='w3m duckduckgo.com'
+alias ping1="ping 1.1.1.1"
+
+pingl() {
+    ping -c 10 192.168.1.$1
 }
 
 md(){
 	pandoc $1 | w3m -T text/html
 }
 
-fix() {
-    audio="audio"
-    keyboard="keyboard"
-    lock="lock"
-    case $1 in
-        $audio) 
-            echo "puseaudio && ~/toggle_sound.sh"
-            echo "Try plugging and unplugging an audio jack"
-            ;;
-        $keyboard)
-            echo "kbdlight"
-            ;;
-        $lock)
-            echo "xautolock -enable | -disable"
-            ;;
-        *)
-            echo "Unknown option. Options:"
-            echo "$audio"
-            echo "$keyboard"
-            echo "$lock"
-            ;;
-    esac
-}
 
-alias neofetch="neofetch --ascii_distro manjaro --ascii_colors 6"
-# alias neofetch="neofetch --ascii_distro arch"
-
-alias ping1="ping 1.1.1.1"
-pingl() {
-    ping -c 10 192.168.1.$1
-}
-
+# DEV SHORTCUTS
 alias py='python3'
 alias pyp='pip3'
-
 alias PluginInstall='vim +PluginInstall +qall'
 
-kb(){
-    # Keyboard brightness
-    brightnessctl --device='tpacpi::kbd_backlight' set $1
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
 }
 
-setkb() {
-    #keyboard layout
-    lang=$1
-    if [[ $lang == "fr" ]]; then
-        lang="be"
-    fi
-    echo $lang
-    setxkbmap $1
-    xmodmap .speedswapper
-}
 
-alias esc='xmodmap .speedswapper'
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+    fix() {
+        audio="audio"
+        keyboard="keyboard"
+        lock="lock"
+        case $1 in
+            $audio) 
+                echo "puseaudio && ~/toggle_sound.sh"
+                echo "Try plugging and unplugging an audio jack"
+                ;;
+            $keyboard)
+                echo "kbdlight"
+                ;;
+            $lock)
+                echo "xautolock -enable | -disable"
+                ;;
+            *)
+                echo "Unknown option. Options:"
+                echo "$audio"
+                echo "$keyboard"
+                echo "$lock"
+                ;;
+        esac
+    }
+
+
+    alias ls='ls -AlGH --color=auto'
+    alias pacman='yay'
+    alias yy='yay --noconfirm'
+    alias yaourt='yay'
+
+    alias neofetch="neofetch --ascii_distro manjaro --ascii_colors 6"
+    # alias neofetch="neofetch --ascii_distro arch"
+
+    kb(){
+        # Keyboard brightness
+        brightnessctl --device='tpacpi::kbd_backlight' set $1
+    }
+
+    setkb() {
+        #keyboard layout
+        lang=$1
+        if [[ $lang == "fr" ]]; then
+            lang="be"
+        fi
+        echo $lang
+        setxkbmap $1
+        xmodmap .speedswapper
+    }
+
+    alias esc='xmodmap .speedswapper'
+
+elif [[ "$OSTYPE" == "darwin"* ]]; then
+	# Use MacVim - for autocompletion
+    alias ls='ls -AlGHF'
+	alias vim='mvim -v'
+	alias iphone='open -a Simulator & disown'
+	alias pixel='~/Library/Android/sdk/tools/emulator -avd Pixel_2_XL_API_28 & disown'
+	alias cdmob='cd ~/mobULIS/mobulis-xamarin && git status'
+	alias emulator='~/Library/Android/sdk/tools/emulator'
+	alias sshmob='ssh u171837@serv737.segi.ulg.ac.be'
+
+	# C++
+    alias ctags="`brew --prefix`/bin/ctags"
+fi

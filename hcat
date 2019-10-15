@@ -32,7 +32,7 @@ if [[ ${first_character} == "." ]]; then # Dotfile
         # vimrc?
         hl vim
     else
-        bash_syntax
+        hl bash
     fi
 elif  [[ ! ${base_name} == *"."* ]]; then # if name doesn't contain "." => has no extension
     #TODO: Read first line and scan for sh / bash / python / perl / lua
@@ -40,7 +40,7 @@ elif  [[ ! ${base_name} == *"."* ]]; then # if name doesn't contain "." => has n
 
     case "$shebang" in
         *sh*)
-            hl sh
+            hl bash
             ;;
 
         *python*)
@@ -59,7 +59,7 @@ elif  [[ ! ${base_name} == *"."* ]]; then # if name doesn't contain "." => has n
             hl perl
             ;;
         *)
-            hl sh 
+            hl bash 
             ;;
     esac
 else
