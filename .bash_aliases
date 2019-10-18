@@ -51,7 +51,7 @@ md(){
 alias py='python3'
 alias pyp='pip3'
 alias PluginInstall='vim +PluginInstall +qall'
-alias gg="g++9 --std=c++11"
+alias gg="g++-9 --std=c++11"
 
 ex ()
 {
