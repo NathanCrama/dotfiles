@@ -51,6 +51,7 @@ md(){
 alias py='python3'
 alias pyp='pip3'
 alias PluginInstall='vim +PluginInstall +qall'
+alias gg="g++9 --std=c++11"
 
 ex ()
 {
@@ -129,8 +130,12 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 	# Use MacVim - for autocompletion
-    alias ls='ls -AlGHF'
 	alias vim='mvim -v'
+
+    alias l='ls -AF1GH'
+    alias ll=' ls -H'
+    alias ls='ls -AlGhH'
+
 	alias iphone='open -a Simulator & disown'
 	alias pixel='~/Library/Android/sdk/tools/emulator -avd Pixel_2_XL_API_28 & disown'
 	alias cdmob='cd ~/mobULIS/mobulis-xamarin && git status'
@@ -139,4 +144,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 
 	# C++
     alias ctags="`brew --prefix`/bin/ctags"
+    alias gcc="/usr/local/Cellar/gcc/9.2.0_1/bin/gcc-9"
+    alias g++="/usr/local/Cellar/gcc/9.2.0_1/bin/g++-9"
 fi
