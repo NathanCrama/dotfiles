@@ -1,8 +1,5 @@
-cd
-
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-
-git clone https://github.com/NathanCrama/dotfiles.git
+git clone https://github.com/NathanCrama/dotfiles.git ~/dotfiles
 
 sudo pacman -Syu --noconfirm
 sudo pacman -Rns palemoon-bin --noconfirm

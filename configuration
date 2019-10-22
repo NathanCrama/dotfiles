@@ -1,0 +1,15 @@
+[ .Xresources ]
+URxvt
+Xterm
+shell colors
+
+[ .config/dunst/dunstrc ]
+Notifications
+
+[ .i3/config ]
+i3bar 
+i3status
+
+[ dotfiles/.rofi.sh ]
+rofi (mod + D launcher)
+

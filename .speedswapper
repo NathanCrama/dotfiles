@@ -1,0 +1,6 @@
+! Swap caps lock and escape
+keysym Home = Escape
+keysym End = Escape
+keysym Escape = End
+
+

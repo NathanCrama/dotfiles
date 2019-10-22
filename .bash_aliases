@@ -8,7 +8,6 @@ alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
 
-alias make='time nice make -j $(nproc)'
 alias pmake='time nice make -j $(nproc) --load-average=$(nproc)'
 
 alias rm='rm -v'
@@ -26,7 +25,7 @@ alias gs='git status'
 alias gl='git --no-pager log --oneline --decorate=short --pretty=oneline -n20'
 alias gb='git branch'
 alias gm='git merge'
-alias gac='git add . && git commit -m' # + commit message
+alias gac='git add -A && git commit -m ' # + commit message
 alias gp='git push' # + remote & branch names
 alias force-push='git add . && git commit -m "Force push" && git push'
 alias update-repo='git reset --hard && git pull --rebase'
@@ -51,6 +50,7 @@ md(){
 alias py='python3'
 alias pyp='pip3'
 alias PluginInstall='vim +PluginInstall +qall'
+alias gg="g++ --std=c++11"
 
 ex ()
 {
@@ -58,6 +58,7 @@ ex ()
     case $1 in
       *.tar.bz2)   tar xjf $1   ;;
       *.tar.gz)    tar xzf $1   ;;
+      *.tar.xz)    tar xvf $1   ;;
       *.bz2)       bunzip2 $1   ;;
       *.rar)       unrar x $1     ;;
       *.gz)        gunzip $1    ;;
@@ -76,6 +77,20 @@ ex ()
 
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+
+    alias ls='ls -Alh --color=auto'
+    alias pacman='yay'
+    alias yy='yay --noconfirm'
+    alias yaourt='yay'
+
+    alias esc='xmodmap $HOME/dotfiles/.speedswapper'
+
+    alias neofetch="neofetch --ascii_colors 1"
+    alias screenfetch="screenfetch -c 1,7"
+    # alias neofetch="neofetch --ascii_distro arch"
+
+    alias xup="xrdb ~/.Xresources"
+
     fix() {
         audio="audio"
         keyboard="keyboard"
@@ -100,17 +115,10 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         esac
     }
 
-
-    alias ls='ls -Alh --color=auto'
-    alias pacman='yay'
-    alias yy='yay --noconfirm'
-    alias yaourt='yay'
-
-    alias neofetch="neofetch --ascii_distro manjaro --ascii_colors 6"
-    # alias neofetch="neofetch --ascii_distro arch"
-
     kb(){
         # Keyboard brightness
+        echo "sudo chmod 777 /sys/class/leds/tpacpi::kbd_backlight/brightness"
+
         brightnessctl --device='tpacpi::kbd_backlight' set $1
     }
 
@@ -120,12 +128,18 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
         if [[ $lang == "fr" ]]; then
             lang="be"
         fi
-        echo $lang
+        echo "Set keyboard layout: $lang"
         setxkbmap $1
-        xmodmap .speedswapper
+        xmodmap $HOME/dotfiles/.speedswapper
     }
 
-    alias esc='xmodmap .speedswapper'
+    accents() {
+        echo "é"
+        echo "ç"
+        echo "â ê î ô û"
+        echo "à è ù"
+        echo "ë ï ü"
+    }
 
 elif [[ "$OSTYPE" == "darwin"* ]]; then
 	# Use MacVim - for autocompletion
@@ -140,3 +154,5 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 	# C++
     alias ctags="`brew --prefix`/bin/ctags"
 fi
+
+
