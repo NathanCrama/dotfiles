@@ -50,11 +50,6 @@ md(){
 alias py='python3'
 alias pyp='pip3'
 alias PluginInstall='vim +PluginInstall +qall'
-<<<<<<< HEAD
-alias gg="g++ --std=c++11"
-=======
-alias gg="g++-9 --std=c++11"
->>>>>>> 21c671507e33588e594b3a4b3f174f575d018a9c
 
 ex ()
 {
@@ -86,6 +81,7 @@ if [[ "$OSTYPE" == "linux-gnu"* ]]; then
     alias pacman='yay'
     alias yy='yay --noconfirm'
     alias yaourt='yay'
+    alias gg="g++ --std=c++11"
 
     alias esc='xmodmap $HOME/dotfiles/.speedswapper'
 
@@ -163,6 +159,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     alias ctags="`brew --prefix`/bin/ctags"
     alias gcc="/usr/local/Cellar/gcc/9.2.0_1/bin/gcc-9"
     alias g++="/usr/local/Cellar/gcc/9.2.0_1/bin/g++-9"
+    alias gg="g++-9 --std=c++11"
 fi
 
 
