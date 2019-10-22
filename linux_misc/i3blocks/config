@@ -1,0 +1,40 @@
+SPATH=/home/vyrd/.config/i3blocks/scripts/
+
+[weather]
+command=$SPATH/weather
+interval=3600
+color=#A4C2F4
+
+[ip]
+command=ip route get 1 | awk '{print $7;exit}'
+interval=10
+label=  
+
+[disk]
+interval=600
+label=  
+command=$SPATH/diskusage
+
+[bandwidth]
+interval=persist
+command=$SPATH/bandwidth/build/exe_bandwidth
+
+[mem]
+command=$SPATH/ramusage
+interval=5
+label= ䷾
+
+[cpu]
+command=$SPATH/cpu_usage/build/exe_cpu 
+interval=persist
+label= ⛶
+
+[battery]
+command=$SPATH/battery
+interval=30
+# label=⚡ 
+
+[time]
+command=date +%T 
+interval=1
+label=  

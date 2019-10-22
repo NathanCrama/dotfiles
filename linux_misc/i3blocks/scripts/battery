@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+PERCENTAGE=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep percentage | sed s/percentage://g | xargs)
+STATE=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep state | sed s/state://g | xargs)
+ICON=""
+
+TIME_REMAINING=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep "time to")
+
+TOOLTIP=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -v native-path | grep -v vendor | grep -v model | grep -v serial | grep -v "power supply" | grep -v updated | grep -v has | grep -v battery | grep -v present | grep -v rechargeable | grep -v energy | grep -v voltage | grep -v technology | grep -v icon-name)
+
+case $BLOCK_BUTTON in
+    # 1)  notify-send -t 2000 "${TIME_REMAINING}"
+    1) notify-send -t 4000 "$TOOLTIP"
+        ;;
+    2)  echo "Right click"
+        ;;
+esac
+
+case $STATE in
+    *discharging*) 
+        ICON="⛽"
+        ;; 
+    *charging*)
+        ICON="⚡"
+        ;;
+    *)           
+        ICON=$STATE
+        ;;
+esac
+
+echo $ICON $PERCENTAGE
+

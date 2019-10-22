@@ -468,3 +468,4 @@ let &background = s:style
 " THE SOFTWARE.
 
 " }}}
+
