@@ -31,6 +31,7 @@ Plugin 'racer-rust/vim-racer'
 
 
 Plugin 'kristijanhusak/vim-hybrid-material'
+Plugin 'dag/vim-fish'
 
 "" All of your Plugins must be added before the following line
 call vundle#end()   
