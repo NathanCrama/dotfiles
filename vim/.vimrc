@@ -65,7 +65,7 @@ let &t_EI = "\e[1 q"
 augroup myCmds
 au!
 
-autocmd VimEnter * silent !echo -ne "\e[1 q"
+" autocmd VimEnter * silent !echo -ne "\e[1 q"
 
 " Changes cursor in insert/normal mode
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -103,5 +103,4 @@ let g:airline_powerline_fonts = 1
 let g:airline_theme='minimalist'
 
 hi CursorLine term=bold cterm=bold guibg=Grey60
-
- map <F8> <Esc>:w <CR>:!clear; cargo run<CR>
+ map <F8> <Esc>:update <CR>:!clear; cargo run<CR>

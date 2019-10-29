@@ -1,4 +1,4 @@
 function rm
-    command /usr/bin/rm -v $argv
+    command /bin/rm -v $argv
 end
 
