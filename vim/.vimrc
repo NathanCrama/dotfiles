@@ -1,12 +1,17 @@
+" git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 " ===========================================================================================
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'powerline/powerline'
+" Plugin 'powerline/powerline'
+
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " Core
 Plugin 'scrooloose/nerdtree'
@@ -21,10 +26,16 @@ Plugin 'jiangmiao/auto-pairs'
 Plugin 'dart-lang/dart-vim-plugin'
 
 " Rust
-" Plugin 'rust-lang/rust.vim'
+Plugin 'rust-lang/rust.vim'
+Plugin 'racer-rust/vim-racer'
+
+
+Plugin 'kristijanhusak/vim-hybrid-material'
 
 "" All of your Plugins must be added before the following line
 call vundle#end()   
+" ===========================================================================================
+filetype plugin indent on    " required
 
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/.ycm_extra_conf.py'
 
@@ -40,9 +51,8 @@ set smarttab
 
 set autoindent
 filetype indent on
-filetype plugin indent on    " required
+" Highlights serarch results
 set hlsearch
-
 " syntax highlighting
 syntax on
 
@@ -84,4 +94,13 @@ cnoreabbrev <expr> WQ ((getcmdtype() is# ':' && getcmdline() is# 'WQ')?('wq'):('
 cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('Wq'))
 
 set cursorline
+
+set background=dark
+colorscheme hybrid_material
+let g:airline_powerline_fonts = 1
+" let g:airline_theme='hybrid'
+let g:airline_theme='minimalist'
+
 hi CursorLine term=bold cterm=bold guibg=Grey60
+
+ map <F8> <Esc>:w <CR>:!clear; cargo run<CR>
