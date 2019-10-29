@@ -5,4 +5,6 @@ function abv
     abbr --add gl "git --no-pager log --oneline --decorate=short --pretty=oneline -n20 "
     abbr --add gm "git merge "
     abbr --add gb "git branch "
+    abbr --add ls "ls -AlGH"
+    abbr --add rm "rm -v"
 end

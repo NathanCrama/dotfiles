@@ -4,4 +4,4 @@ function fish_prompt
     powerline-shell --shell bare $status
 end
 
-abv
+export LC_ALL=en_US.utf-8
