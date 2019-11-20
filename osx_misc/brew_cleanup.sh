@@ -27,6 +27,12 @@ echo ""
 rustup update
 
 echo ""
+<<<<<<< HEAD
 echo "> pod repo update"
 echo ""
 pod repo update
+=======
+echo "> rustup upgrade"
+echo ""
+rustup update
+>>>>>>> syncing dotfiles
