@@ -8,22 +8,26 @@ Plug 'tpope/vim-commentary'
 Plug 'dense-analysis/ale'
 Plug 'jiangmiao/auto-pairs'
 Plug 'natebosch/vim-lsc'
+Plug 'christoomey/vim-tmux-navigator'
 
 """ Language support
 " Rust
-Plug 'rust-lang/rust.vim'
-Plug 'racer-rust/vim-racer'
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
+Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 
 " Python
-Plug 'vim-scripts/indentpython.vim'
+Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 
 " Misc
-Plug 'dag/vim-fish'
+Plug 'shmup/vim-sql-syntax'
+Plug 'dag/vim-fish', { 'for': 'fish' }
+Plug 'vim-scripts/bash-support.vim', { 'for': 'bash' }
 
 " Pretty
 Plug 'kristijanhusak/vim-hybrid-material'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ryanoasis/vim-devicons'
 
 call plug#end()   
 
@@ -46,9 +50,6 @@ colorscheme hybrid_material
 
 let g:airline_powerline_fonts = 1
 let g:airline_theme='minimalist'
-" let g:airline_theme='hybrid'
-" let g:airline_theme='deus'
-" let g:airline_theme='bubblegum'
 
 "" Fixes tab length
 set tabstop=4
