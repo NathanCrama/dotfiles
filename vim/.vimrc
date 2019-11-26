@@ -1,7 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 " Core
-Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'ycm-core/YouCompleteMe'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
@@ -17,11 +17,20 @@ Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 
 " Python
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
+Plug 'gotcha/vimpdb', { 'for': 'python' }
+
+" Dart
+Plug 'dart-lang/dart-vim-plugin', { 'for': 'dart' }
+Plug 'natebosch/vim-lsc-dart', { 'for': 'dart' }
+
+" HTML - CSS - JS
+Plug 'mattn/emmet-vim', { 'for': 'html' }
+Plug 'pangloss/vim-javascript', { 'for': ['html', 'javascript'] }
 
 " Misc
-Plug 'shmup/vim-sql-syntax'
-Plug 'dag/vim-fish', { 'for': 'fish' }
-Plug 'vim-scripts/bash-support.vim', { 'for': 'bash' }
+Plug 'shmup/vim-sql-syntax', { 'for': 'sql' }
+Plug 'dag/vim-fish'
+Plug 'vim-scripts/bash-support.vim' 
 
 " Pretty
 Plug 'kristijanhusak/vim-hybrid-material'
@@ -37,6 +46,7 @@ let g:ycm_global_ycm_extra_conf = '~/dotfiles/misc/.ycm_extra_conf.py'
 set completeopt-=preview
 set noshowmode
 let g:racer_experimental_completer = 1
+let g:lsc_server_commands = { 'dart': 'dart_language_server' }
 
 """ LINTING
 " Show ALE warnings in Airline
