@@ -34,11 +34,14 @@ Plug 'vim-scripts/bash-support.vim'
 
 " Pretty
 Plug 'kristijanhusak/vim-hybrid-material'
+Plug 'arcticicestudio/nord-vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 
 call plug#end()   
+
+set encoding=utf8
 
 """ COMPLETION SETTINGS
 " Universal completion settings for C++
@@ -55,24 +58,25 @@ let g:airline#extensions#ale#enabled = 1
 """ PRETTY SETTINGS
 syntax on
 set number relativenumber
-set background=dark
-colorscheme hybrid_material
+set colorcolumn=80
+set hlsearch
+
+colorscheme nord
+" colorscheme hybrid_material
+" set background=dark
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='minimalist'
+" let g:airline_theme='minimalist'
 
-"" Fixes tab length
+set autoindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
-set softtabstop=0
-set smarttab
-" Draws a line at columt 80. Don't write longer lines than that you dummy
-set colorcolumn=80
 
-set autoindent
-filetype indent on
-set hlsearch
+"" Fixes tab length
+" set softtabstop=0
+" set smarttab
+" filetype indent on
 
 "" Changes cursor in insert mode
 let &t_SI = "\e[3 q"

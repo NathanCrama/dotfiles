@@ -16,12 +16,17 @@ echo "> mas upgrade"
 echo ""
 mas upgrade
 
-echo ""
-echo "> flutter upgrade"
-echo ""
-flutter upgrade
+# echo ""
+# echo "> flutter upgrade"
+# echo ""
+# flutter upgrade
 
-# echo ""
-# echo "> rustup upgrade"
-# echo ""
-# rustup update
+echo ""
+echo "> rustup upgrade"
+echo ""
+rustup update
+
+echo ""
+echo "> pod repo update"
+echo ""
+pod repo update
