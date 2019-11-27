@@ -58,25 +58,24 @@ let g:airline#extensions#ale#enabled = 1
 """ PRETTY SETTINGS
 syntax on
 set number relativenumber
-set colorcolumn=80
 set hlsearch
 
-colorscheme nord
-" colorscheme hybrid_material
-" set background=dark
+set colorcolumn=80
+set textwidth=80
 
+" colorscheme nord
+colorscheme hybrid_material
+set background=dark
 let g:airline_powerline_fonts = 1
-" let g:airline_theme='minimalist'
+let g:airline_theme='minimalist'
 
 set autoindent
 set tabstop=4
 set shiftwidth=4
 set expandtab
 
-"" Fixes tab length
-" set softtabstop=0
-" set smarttab
-" filetype indent on
+filetype plugin on 
+filetype indent on
 
 "" Changes cursor in insert mode
 let &t_SI = "\e[3 q"
@@ -89,7 +88,9 @@ hi CursorLine term=bold cterm=bold guibg=Grey60
 "" Allows to switch panes with NerdTree
 set hidden
 augroup myCmds
-    " au!
+    au!
+    au BufReadPost,BufNewFile *.asm,*.s set ft=nasm
+
     " autocmd VimEnter * :normal :startinsert :stopinsert 
     " "" Changes cursor in insert/normal mode
     " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
