@@ -157,9 +157,6 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 
 	# C++
     alias ctags="`brew --prefix`/bin/ctags"
-    alias gcc="/usr/local/Cellar/gcc/9.2.0_1/bin/gcc-9"
-    alias g++="/usr/local/Cellar/gcc/9.2.0_1/bin/g++-9"
-    alias gg="g++-9 --std=c++11"
 fi
 
 
