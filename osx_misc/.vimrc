@@ -15,6 +15,9 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 
+" Neovim
+Plug 'sebastianmarkow/deoplete-rust'
+
 " Python
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 
@@ -36,9 +39,10 @@ call plug#end()
 set encoding=utf8
 
 """ COMPLETION SETTINGS
+" Dart
 let g:lsc_server_commands = {'dart': 'dart_language_server'}
 
-" Universal completion settings for C++
+" completion settings for C++
 let g:ycm_global_ycm_extra_conf = '~/dotfiles/misc/.ycm_extra_conf.py'
 set completeopt-=preview
 set noshowmode
@@ -81,15 +85,15 @@ hi CursorLine term=bold cterm=bold guibg=Grey60
 set hidden
 augroup myCmds
     au!
-    autocmd VimEnter * :normal :startinsert :stopinsert 
-    "" Changes cursor in insert/normal mode
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-    "" Start NERDTree
-    autocmd VimEnter * NERDTree
-    "" Go to previous (last accessed) window.
-    autocmd VimEnter * wincmd p
-    "" Focusses main window when opening a new tab
-    autocmd BufNew * wincmd l
+    " autocmd VimEnter * :normal :startinsert :stopinsert 
+    " "" Changes cursor in insert/normal mode
+    " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    " "" Start NERDTree
+    " autocmd VimEnter * NERDTree
+    " "" Go to previous (last accessed) window.
+    " autocmd VimEnter * wincmd p
+    " "" Focusses main window when opening a new tab
+    " autocmd BufNew * wincmd l
 augroup END
 
 """ KEYBINDINGS
@@ -100,7 +104,8 @@ cnoreabbrev <expr> Q ((getcmdtype() is# ':' && getcmdline() is# 'Q')?('q'):('Q')
 cnoreabbrev <expr> WQ ((getcmdtype() is# ':' && getcmdline() is# 'WQ')?('wq'):('WQ'))
 cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('Wq'))
 
-"" Cargo shortcut
-nmap <F8> :update <CR> :!clear; cargo run <CR>
 "" Map NERDTree to F6
 nmap <F6> :NERDTreeToggle<CR>
+
+" Rust Shortcuts
+nmap <F8> :update <CR> :!clear; cargo run <CR>

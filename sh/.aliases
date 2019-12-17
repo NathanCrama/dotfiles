@@ -8,8 +8,6 @@ alias free='free -m'                      # show sizes in MB
 alias np='nano -w PKGBUILD'
 alias more=less
 
-alias pmake='time nice make -j $(nproc) --load-average=$(nproc)'
-
 alias rm='rm -v'
 
 # TMUX
@@ -29,6 +27,7 @@ alias gac='git add -A && git commit -m ' # + commit message
 alias gp='git push' # + remote & branch names
 alias force-push='git add . && git commit -m "Force push" && git push'
 alias update-repo='git reset --hard && git pull --rebase'
+
 gipu() {
     git add -A && git commit -m $1 $2 $3 $4 && git push 
 }
@@ -41,17 +40,17 @@ pingl() {
     ping -c 10 192.168.1.$1
 }
 
-md(){
-	pandoc $1 | w3m -T text/html
-}
-
+# md(){
+# 	pandoc $1 | w3m -T text/html
+# }
 
 # DEV SHORTCUTS
 alias py='python3'
 alias pyp='pip3'
 alias PluginInstall='vim +PluginInstall +qall'
+alias PlugInstall='vim +PlugInstall +qall'
 
-ex ()
+extract ()
 {
   if [ -f $1 ] ; then
     case $1 in
@@ -59,7 +58,7 @@ ex ()
       *.tar.gz)    tar xzf $1   ;;
       *.tar.xz)    tar xvf $1   ;;
       *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1     ;;
+      *.rar)       unrar x $1   ;;
       *.gz)        gunzip $1    ;;
       *.tar)       tar xf $1    ;;
       *.tbz2)      tar xjf $1   ;;
@@ -150,7 +149,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     alias ls='ls -AlGhH'
 
 	alias iphone='open -a Simulator & disown'
-	alias pixel='~/Library/Android/sdk/tools/emulator -avd Pixel_2_XL_API_28 & disown'
+	alias pixel='~/Library/Android/sdk/tools/emulator -avd Pixel_3_XL_API_29 & disown'
 	alias cdmob='cd ~/mobULIS/mobulis-xamarin && git status'
 	alias emulator='~/Library/Android/sdk/tools/emulator'
 	alias sshmob='ssh u171837@serv737.segi.ulg.ac.be'
