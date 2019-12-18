@@ -65,7 +65,11 @@ set textwidth=80
 
 " colorscheme nord
 colorscheme hybrid_material
+" colorscheme jellybeans
+
 set background=dark
+"
+hi Normal guibg=NONE ctermbg=NONE
 let g:airline_powerline_fonts = 1
 let g:airline_theme='minimalist'
 
@@ -114,3 +118,15 @@ cnoreabbrev <expr> Wq ((getcmdtype() is# ':' && getcmdline() is# 'Wq')?('wq'):('
 nmap <F8> :update <CR> :!clear; cargo run <CR>
 "" Map NERDTree to F6
 nmap <F6> :NERDTreeToggle<CR>
+
+
+
+
+set guifont=DroidSansMono\ Nerd\ Font\ 12
+
+" testing rounded separators (extra-powerline-symbols):
+" let g:airline_left_sep = "\ue0c8"
+" let g:airline_right_sep = "\ue0ca"
+
+" set the CN (column number) symbol:
+let g:airline_section_z = airline#section#create(["\uE0A1" . '%{line(".")}' . "\uE0A3" . '%{col(".")}'])

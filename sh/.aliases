@@ -1,11 +1,10 @@
+#!/usr/bin/sh
+
 # COREUTILS
 alias grep='grep --colour=auto'
 alias egrep='egrep --colour=auto'
 alias fgrep='fgrep --colour=auto'
-alias cp="cp -i"                          # confirm before overwriting something
-alias df='df -h'                          # human-readable sizes
-alias free='free -m'                      # show sizes in MB
-alias np='nano -w PKGBUILD'
+alias cp="cp -iR"                          # confirm before overwriting something
 alias more=less
 
 alias rm='rm -v'
@@ -29,7 +28,9 @@ alias force-push='git add . && git commit -m "Force push" && git push'
 alias update-repo='git reset --hard && git pull --rebase'
 
 gipu() {
-    git add -A && git commit -m $1 $2 $3 $4 && git push 
+    git add -A
+    git commit -m $@ 
+    git push 
 }
 
 # MISC
@@ -76,7 +77,7 @@ extract ()
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
-    alias ls='ls -Alh --color=auto'
+    alias ls='lsd -Alh'
     alias pacman='yay'
     alias yy='yay --noconfirm'
     alias yaourt='yay'
