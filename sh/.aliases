@@ -145,9 +145,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 	# Use MacVim - for autocompletion
 	alias vim='mvim -v'
 
-    alias l='ls -AF1GH'
-    alias ll=' ls -H'
-    alias ls='ls -AlGhH'
+    alias ls='lsd -Alh'
 
 	alias iphone='open -a Simulator & disown'
 	alias pixel='~/Library/Android/sdk/tools/emulator -avd Pixel_3_XL_API_29 & disown'
