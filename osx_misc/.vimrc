@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-" Core
+"""" Core
 Plug 'scrooloose/nerdtree'
 Plug 'ycm-core/YouCompleteMe'
 Plug 'tpope/vim-surround'
@@ -10,26 +10,26 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'natebosch/vim-lsc'
 Plug 'christoomey/vim-tmux-navigator'
 
-""" Language support
-" Rust
+"""" Language support
+"" Rust
 Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 Plug 'racer-rust/vim-racer', { 'for': 'rust' }
 
-" Neovim
+"" Neovim
 Plug 'sebastianmarkow/deoplete-rust'
 
-" Python
+"" Python
 Plug 'vim-scripts/indentpython.vim', { 'for': 'python' }
 
-" Dart
+"" Dart
 Plug 'natebosch/vim-lsc-dart', { 'for': 'dart' }
 
-" Misc
+"" Misc
 Plug 'shmup/vim-sql-syntax'
 Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'vim-scripts/bash-support.vim', { 'for': 'bash' }
 
-" Pretty
+"" Pretty
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
@@ -37,6 +37,7 @@ Plug 'ryanoasis/vim-devicons'
 call plug#end()   
 
 set encoding=utf8
+set rtp+=/usr/local/opt/fzf
 
 """ COMPLETION SETTINGS
 " Dart

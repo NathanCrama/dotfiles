@@ -148,13 +148,15 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
     alias ls='lsd -Alh'
 
 	alias iphone='open -a Simulator & disown'
-	alias pixel='~/Library/Android/sdk/tools/emulator -avd Pixel_3_XL_API_29 & disown'
+	alias pixel='~/Library/Android/sdk/tools/emulator -avd Pixel & disown'
 	alias cdmob='cd ~/mobULIS/mobulis-xamarin && git status'
 	alias emulator='~/Library/Android/sdk/tools/emulator'
 	alias sshmob='ssh u171837@serv737.segi.ulg.ac.be'
 
 	# C++
     alias ctags="`brew --prefix`/bin/ctags"
+
+    alias tree="lsd --tree"
 fi
 
 
