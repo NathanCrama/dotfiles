@@ -41,6 +41,7 @@ fi
 
 if hash pip3 2>/dev/null; then
     if ! hash flake8 2>/dev/null; then
+        sudo pip3 install 'python-language-server[all]'
         sudo pip3 install flake8
     else 
         already_installed flake8
