@@ -77,7 +77,7 @@ extract ()
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
 
-    alias ls='lsd -Alh'
+    alias ls='exa -al'
     alias pacman='yay'
     alias yy='yay --noconfirm'
     alias yaourt='yay'
@@ -145,7 +145,7 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 	# Use MacVim - for autocompletion
 	alias vim='mvim -v'
 
-    alias ls='lsd -Alh'
+    alias ls='exa -al'
 
 	alias iphone='open -a Simulator & disown'
 	alias pixel='~/Library/Android/sdk/tools/emulator -avd Pixel & disown'

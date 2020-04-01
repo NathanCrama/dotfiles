@@ -17,7 +17,7 @@
 #      REVISION:  ---
 #===============================================================================
 
-set -o nounset                              # Treat unset variables as an error
+# set -o nounset                              # Treat unset variables as an error
 
-export KDEWM=/usr/bin/awesome
+# export KDEWM=/usr/bin/awesome
 
