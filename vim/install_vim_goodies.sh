@@ -10,6 +10,8 @@ else
     already_installed "Vim-Plug"
 fi
 
+vim +PlugInstall +qall
+
 
 install_shellcheck() {
     INSTALL_CMD=""
